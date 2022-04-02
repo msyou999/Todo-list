@@ -2,7 +2,7 @@
 
 	<div>
 		
-		 <!-- main.todo -->
+	<!-- main.todo -->
     <main class="todo">
         <div class="container">
             <h1>To - Do List</h1>
@@ -17,45 +17,20 @@
             <!-- ul.todo_list -->
             <ul class="todo_list">
                 <li class="todo_list_tit"><p>할 일</p></li>
-
-
-
-                <li class="del_btn">
+                <li class="del_btn" v-for="(item,index) in todolist" :key="index">
                     <p>
-                        <input type="checkbox" name="check1" value="">JS 공부하기
+                        <input type="checkbox" name="check1" value="">{{item.todo}}
                     </p>
                     <ul class="todo_list_btn">
                         <li><button>수 정</button></li>
                         <li><button>삭 제</button></li>
                     </ul>
                 </li>
-
-
-
-                <li>
-                    <p><input type="checkbox" name="check2" value="">웹 알아보기</p>
-                    <p><span></span></p>
-                </li>
-                <li>
-                    <p><input type="checkbox" name="check3" value="">책 읽기</p>
-                    <p><span></span></p>
-                </li>
-                <li>
-                    <p><input type="checkbox" name="check4" value="">거북이한테 전화하기</p>
-                    <p><span></span></p>
-                </li>
-                <li>
-                    <p><input type="checkbox" name="check5" value="">유리랑 소꿉놀이하기</p>
-                    <p><span></span></p>
-                </li>
             </ul>
             <!--// ul.todo_list -->
 
         </div>
-    </main>
-    <!--// main.todo -->
-
-		
+    </main>	
 	</div>
 
 </template>
@@ -65,6 +40,13 @@ export default {
   name: 'Todolist',
 	data: function() {
 		return {
+			todolist:[
+				{todo:"Vue.js 공부하기"},
+				{todo:"네트워크보안 서브노트 작성하기"},
+				{todo:"실기 강의 듣기"},
+				{todo:"과제 제출하기"},
+				{todo:"책상 정리하기"},
+			]
 		}
 	},
 }
